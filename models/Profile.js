@@ -6,7 +6,7 @@ const ProfileSchema = new mongoose.Schema({
 		ref: 'user',
 	},
 	phone: {
-		type: Number,
+		type: String,
 	},
 	preferredContact: {
 		type: String,
