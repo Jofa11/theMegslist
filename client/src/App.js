@@ -7,7 +7,12 @@ import Routes from './components/routing/Routes';
 import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 import './App.css';
+
+if (localStorage.token) {
+	setAuthToken(localStorage.token);
+}
 
 const App = () => {
 	useEffect(() => {
