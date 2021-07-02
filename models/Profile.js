@@ -8,6 +8,9 @@ const ProfileSchema = new mongoose.Schema({
 	location: {
 		type: String,
 	},
+	email: {
+		type: String,
+	},
 	phone: {
 		type: String,
 	},
