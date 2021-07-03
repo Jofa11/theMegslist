@@ -4,6 +4,7 @@ import Register from '../auth/Register';
 import Login from '../auth/Login';
 import Alert from '../layout/Alert';
 import Marketplace from '../marketplace/Marketplace';
+import CreateProfile from '../profile-forms/CreateProfile';
 import NotFound from '../layout/NotFound';
 import PrivateRoute from '../routing/PrivateRoute';
 
@@ -14,7 +15,8 @@ const Routes = () => {
 			<Switch>
 				<Route exact path='/register' component={Register} />
 				<Route exact path='/login' component={Login} />
-                <PrivateRoute exact path='/marketplace' component={Marketplace} />
+				<PrivateRoute exact path='/marketplace' component={Marketplace} />
+				<PrivateRoute exact path='/create-profile' component={CreateProfile} />
 				<Route component={NotFound} />
 			</Switch>
 		</section>
