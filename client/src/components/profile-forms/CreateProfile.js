@@ -91,7 +91,7 @@ const CreateProfile = ({ createProfile, history }) => {
 						value={preferredContact}
 						onChange={(e) => onChange(e)}>
 						<option value='0'>Preferred Method of Contact</option>
-						<option value='Email'>email</option>
+						<option value='Email'>Email</option>
 						<option value='Phone Call'>Phone Call</option>
 						<option value='Text Message'>Text Message</option>
 						<option value='Message In Site'>Message In Site</option>
