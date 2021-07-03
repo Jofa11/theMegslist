@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { createProfile } from '../../actions/profile';
 
 const CreateProfile = ({ createProfile, history }) => {
 	const [formData, setFormData] = useState({
@@ -47,7 +49,7 @@ const CreateProfile = ({ createProfile, history }) => {
 				profile stand out
 			</p>
 			<small>* = required field</small>
-			<form className='form'>
+			<form className='form' onSubmit={(e) => onSubmit(e)}>
 				<div className='form-group'>
 					<input
 						type='text'
@@ -63,7 +65,7 @@ const CreateProfile = ({ createProfile, history }) => {
 				<div className='form-group'>
 					<input
 						type='text'
-						placeholder='Email'
+						placeholder='* Email'
 						name='email'
 						value={email}
 						onChange={(e) => onChange(e)}
@@ -90,7 +92,7 @@ const CreateProfile = ({ createProfile, history }) => {
 						name='preferredContact'
 						value={preferredContact}
 						onChange={(e) => onChange(e)}>
-						<option value='0'>Preferred Method of Contact</option>
+						<option value='0'>* Preferred Method of Contact</option>
 						<option value='Email'>Email</option>
 						<option value='Phone Call'>Phone Call</option>
 						<option value='Text Message'>Text Message</option>
@@ -103,7 +105,8 @@ const CreateProfile = ({ createProfile, history }) => {
 					<textarea
 						placeholder='A short bio of yourself'
 						name='bio'
-						value={bio}></textarea>
+						value={bio}
+						onChange={(e) => onChange(e)}></textarea>
 					<small className='form-text'>
 						Tell us a little about yourself. Totally optional
 					</small>
@@ -179,14 +182,16 @@ const CreateProfile = ({ createProfile, history }) => {
 				)}
 
 				<input type='submit' className='btn btn-primary my-1' />
-				<a className='btn btn-light my-1' href='dashboard.html'>
+				<Link className='btn btn-light my-1' to='/marketplace'>
 					Go Back
-				</a>
+				</Link>
 			</form>
 		</Fragment>
 	);
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+	createProfile: PropTypes.func.isRequired,
+};
 
-export default CreateProfile;
+export default connect(null, { createProfile })(withRouter(CreateProfile));

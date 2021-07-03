@@ -3,7 +3,8 @@ import { setAlert } from './alert';
 
 import {
     GET_PROFILE,
-    PROFILE_ERROR
+    PROFILE_ERROR,
+    UPDATE_PROFILE,
 } from './types';
 
 // Get current users profile
@@ -44,7 +45,7 @@ export const createProfile = (formData, history, edit = false) => async (
 		dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
 		if (!edit) {
-			history.push('/dashboard');
+			history.push('/marketplace');
 		}
 	} catch (err) {
 		const errors = err.response.data.errors;
