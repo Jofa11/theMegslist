@@ -10,12 +10,34 @@ const ProfileSchema = new mongoose.Schema({
 	},
 	email: {
 		type: String,
+		required: true,
 	},
 	phone: {
 		type: String,
 	},
 	preferredContact: {
 		type: String,
+		required: true,
+	},
+	bio: {
+		type: String,
+	},
+	social: {
+		youtube: {
+			type: String,
+		},
+		twitter: {
+			type: String,
+		},
+		facebook: {
+			type: String,
+		},
+		linkedin: {
+			type: String,
+		},
+		instagram: {
+			type: String,
+		},
 	},
 	date: {
 		type: Date,

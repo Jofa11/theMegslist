@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import { getCurrentProfile } from '../../actions/profile';
-import { Fragment } from 'react';
+import MarketplaceActions from './MarketplaceActions';
+import { deleteAccount, getCurrentProfile } from '../../actions/profile';
+
 
 const Marketplace = ({
 	getCurrentProfile,
+	deleteAccount,
 	auth: { user },
 	profile: { profile, loading },
 }) => {
 	useEffect(() => {
 		getCurrentProfile();
-	}, []);
+	}, [getCurrentProfile]);
 
 	return loading && profile === null ? (
 		<Spinner />
@@ -24,14 +26,22 @@ const Marketplace = ({
 				<i className='fas fa-user'></i> Welcome {user && user.name}
 			</p>
 			{profile !== null ? (
-				<Fragment>has</Fragment>
+				<Fragment>
+					<MarketplaceActions />
+
+					<div className='my-2'>
+						<button className='btn btn-danger' onClick={() => deleteAccount()}>
+							<i className='fas fa-user-minus'></i> Delete My Account
+						</button>
+					</div>
+				</Fragment>
 			) : (
 				<Fragment>
-                    <p>You have not yet set up a profile, please add some info</p>
-                    <Link to='create-profile' className='btn btn-primary my-1'>
-                        Create Profile
-                    </Link>
-                </Fragment>
+					<p>You have not yet set up a profile, please add some info</p>
+					<Link to='create-profile' className='btn btn-primary my-1'>
+						Create Profile
+					</Link>
+				</Fragment>
 			)}
 		</Fragment>
 	);
@@ -39,6 +49,7 @@ const Marketplace = ({
 
 Marketplace.propTypes = {
 	getCurrentProfile: PropTypes.func.isRequired,
+	deleteAccount: PropTypes.func.isRequired,
 	auth: PropTypes.object.isRequired,
 	profile: PropTypes.object.isRequired,
 };
@@ -48,4 +59,4 @@ const mapStateToProps = (state) => ({
 	profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Marketplace);
+export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Marketplace);

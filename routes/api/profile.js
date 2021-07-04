@@ -5,6 +5,7 @@ const { check, validationResult } = require('express-validator');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
 
 // @route   GET api/profile/me
 // @desc    Get current user's profile
@@ -59,13 +60,35 @@ router.post('/', auth, async (req, res) => {
 		return res.status(400).json({ errors: errors.array() });
 	}
 
-	const { phone, preferredContact } = req.body;
+	const {
+		location,
+		email,
+		phone,
+		preferredContact,
+		bio,
+		twitter,
+		facebook,
+		linkedin,
+		youtube,
+		instagram,
+	} = req.body;
 
 	// Build profile object
 	const profileFields = {};
 	profileFields.user = req.user.id;
+	if (location) profileFields.location = location;
+	if (email) profileFields.email = email;
 	if (phone) profileFields.phone = phone;
 	if (preferredContact) profileFields.preferredContact = preferredContact;
+	if (bio) profileFields.bio = bio;
+
+	// Build social object
+	profileFields.social = {};
+	if (youtube) profileFields.social.youtube = youtube;
+	if (twitter) profileFields.social.twitter = twitter;
+	if (facebook) profileFields.social.facebook = facebook;
+	if (linkedin) profileFields.social.linkedin = linkedin;
+	if (instagram) profileFields.social.instagram = instagram;
 
 	try {
 		let profile = await Profile.findOne({ user: req.user.id });
@@ -97,8 +120,8 @@ router.post('/', auth, async (req, res) => {
 // @access   Private
 router.delete('/', auth, async (req, res) => {
 	try {
-		// @todo - remove user's posts
-
+		// Remove user posts
+		await Post.deleteMany({ user: req.user.id });
 		// Remove profile
 		await Profile.findOneAndRemove({ user: req.user.id });
 		// Remove user
