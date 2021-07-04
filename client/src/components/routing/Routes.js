@@ -6,6 +6,7 @@ import Alert from '../layout/Alert';
 import Marketplace from '../marketplace/Marketplace';
 import CreateProfile from '../profile-forms/CreateProfile';
 import EditProfile from '../profile-forms/EditProfile';
+import Profile from '../profile/Profile';
 import NotFound from '../layout/NotFound';
 import PrivateRoute from '../routing/PrivateRoute';
 
@@ -16,6 +17,7 @@ const Routes = () => {
 			<Switch>
 				<Route exact path='/register' component={Register} />
 				<Route exact path='/login' component={Login} />
+				<Route exact path='/profile/:id' component={Profile} />
 				<PrivateRoute exact path='/marketplace' component={Marketplace} />
 				<PrivateRoute exact path='/create-profile' component={CreateProfile} />
 				<PrivateRoute exact path='/edit-profile' component={EditProfile} />
