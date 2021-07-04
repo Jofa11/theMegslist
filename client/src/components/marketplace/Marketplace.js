@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
+import MarketplaceActions from './MarketplaceActions';
 import { getCurrentProfile } from '../../actions/profile';
 import { Fragment } from 'react';
 
@@ -24,7 +25,9 @@ const Marketplace = ({
 				<i className='fas fa-user'></i> Welcome {user && user.name}
 			</p>
 			{profile !== null ? (
-				<Fragment>has</Fragment>
+				<Fragment>
+					<MarketplaceActions />
+				</Fragment>
 			) : (
 				<Fragment>
                     <p>You have not yet set up a profile, please add some info</p>
