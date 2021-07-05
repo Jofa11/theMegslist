@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const DashboardActions = ({ profile: { user: { _id } } }) => {
+const MarketplaceActions = ({ _id }) => {
+
 	return (
 		<div className='dash-buttons'>
 			<Link to={`/profile/${_id}`} className='btn btn-light'>
@@ -18,8 +19,8 @@ const DashboardActions = ({ profile: { user: { _id } } }) => {
 	);
 };
 
-DashboardActions.propTypes = {
+MarketplaceActions.propTypes = {
 	profile: PropTypes.object.isRequired,
 };
 
-export default DashboardActions;
+export default MarketplaceActions;

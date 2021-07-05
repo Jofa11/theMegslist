@@ -23,6 +23,9 @@ const Profile = ({
 				<Spinner />
 			) : (
 				<Fragment>
+					<Link to='/marketplace' className='btn btn-light'>
+						Back To Marketplace
+					</Link>
 					{auth.isAuthenticated &&
 						auth.loading === false &&
 						auth.user._id === profile.user._id && (
@@ -30,6 +33,10 @@ const Profile = ({
 								Edit Profile
 							</Link>
 						)}
+					<div className='profile-grid my-1'>
+						<ProfileTop profile={profile} />
+						<ProfileAbout profile={profile} />
+					</div>
 				</Fragment>
 			)}
 		</Fragment>

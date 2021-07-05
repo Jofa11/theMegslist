@@ -23,14 +23,6 @@ const EditProfile = ({
 		instagram: '',
 	});
 
-	const onChange = (e) =>
-		setFormData({ ...formData, [e.target.name]: e.target.value });
-
-	const onSubmit = (e) => {
-		e.preventDefault();
-		createProfile(formData, history, true);
-	};
-
 	const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
 	useEffect(() => {
@@ -63,6 +55,14 @@ const EditProfile = ({
 		youtube,
 		instagram,
 	} = formData;
+
+	const onChange = (e) =>
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		createProfile(formData, history, true);
+	};
 
 	return (
 		<Fragment>
