@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -13,12 +13,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 			<li>
 				<Link to='#'>Post Stuff</Link>
 			</li>
-			<li>
-				<Link to='#'>
-					<i className='fas fa-user' />{' '}
-					<span className='hide-sm'>My Profile</span>
-				</Link>
-			</li>
+
 			<li>
 				<a onClick={logout} href='#!'>
 					<i className='fas fa-sign-out-alt' />{' '}
@@ -31,7 +26,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const guestLinks = (
 		<ul>
 			<li>
-				<Link to='/profiles'>Marketplace</Link>
+				<Link to='/marketplace'>Marketplace</Link>
 			</li>
 			<li>
 				<Link to='/register'>Register</Link>
