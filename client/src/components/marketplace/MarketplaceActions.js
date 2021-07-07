@@ -19,8 +19,4 @@ const MarketplaceActions = ({ _id }) => {
 	);
 };
 
-MarketplaceActions.propTypes = {
-	profile: PropTypes.object.isRequired,
-};
-
 export default MarketplaceActions;
