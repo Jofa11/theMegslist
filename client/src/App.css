@@ -330,6 +330,12 @@ button {
 	margin-right: 0.6rem;
 }
 
+.mark {
+	position: relative;
+	background: url('./img/theMegFloaty.jpeg') no-repeat center center/cover;
+	height: 100vh;
+}
+
 /* Landing Page */
 .landing {
 	position: relative;
