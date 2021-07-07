@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
+import Posts from '../posts/Posts';
 import MarketplaceActions from './MarketplaceActions';
 import { deleteAccount, getCurrentProfile } from '../../actions/profile';
 
@@ -34,6 +35,7 @@ const Marketplace = ({
 							<i className='fas fa-user-minus'></i> Delete My Account
 						</button>
 					</div>
+					<Posts />
 				</Fragment>
 			) : (
 				<Fragment>
