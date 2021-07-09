@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getCurrentProfile } from '../../actions/profile';
 
-const MarketplaceActions = ({ getCurrentProfile, _id }) => {
-	useEffect(() => {
-		getCurrentProfile();
-	}, [getCurrentProfile]);
+
+const MarketplaceActions = ({ _id }) => {
 
 	return (
 		<div className='dash-buttons'>
@@ -24,8 +19,5 @@ const MarketplaceActions = ({ getCurrentProfile, _id }) => {
 	);
 };
 
-MarketplaceActions.propTypes = {
-	getCurrentProfile: PropTypes.func.isRequired,
-};
 
-export default connect(null, { getCurrentProfile })(MarketplaceActions);
+export default MarketplaceActions;
