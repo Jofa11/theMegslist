@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import { setAlert } from './alert';
 
 import {
@@ -94,7 +95,7 @@ export const deleteAccount = (id) => async (dispatch) => {
 
 			dispatch({ type: CLEAR_PROFILE });
 			dispatch({ type: ACCOUNT_DELETED });
-
+			<Redirect push to='/' />;
 			dispatch(setAlert('Your account has been deleted'));
 		} catch (err) {
 			dispatch({
