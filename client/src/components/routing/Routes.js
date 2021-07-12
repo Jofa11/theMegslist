@@ -8,6 +8,7 @@ import CreateProfile from '../profile-forms/CreateProfile';
 import EditProfile from '../profile-forms/EditProfile';
 import Profile from '../profile/Profile';
 import Posts from '../posts/Posts';
+import Post from '../post/Post';
 import PostForm from '../posts/PostForm';
 import NotFound from '../layout/NotFound';
 import PrivateRoute from '../routing/PrivateRoute';
@@ -25,6 +26,7 @@ const Routes = () => {
 				<PrivateRoute exact path='/create-profile' component={CreateProfile} />
 				<PrivateRoute exact path='/edit-profile' component={EditProfile} />
 				<PrivateRoute exact path='/postform' component={PostForm} />
+				<PrivateRoute exact path='/posts/:id' component={Post} />
 				<Route component={NotFound} />
 			</Switch>
 		</section>
