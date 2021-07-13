@@ -17,8 +17,8 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
 		<Spinner />
 	) : (
 		<Fragment>
-			<Link to='/posts' className='btn'>
-				Back to Posts
+			<Link to='/marketplace' className='btn'>
+				Back to Marketplace
 			</Link>
 			<PostItem post={post} showActions={false} />
 			<CommentForm postId={post._id} />
