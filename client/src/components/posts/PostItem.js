@@ -26,7 +26,7 @@ const PostItem = ({
 			<p className='post-date'>
 				Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
 			</p>
-			<Link to={`/post/${_id}`} className='btn btn-primary'>
+			<Link to={`/posts/${_id}`} className='btn btn-primary'>
 				Comment{' '}
 				{comments.length > 0 && (
 					<span className='comment-count'>{comments.length}</span>
