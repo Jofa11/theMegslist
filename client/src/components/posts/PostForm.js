@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addPost } from '../../actions/post';
@@ -8,6 +9,11 @@ const PostForm = ({ addPost }) => {
 
 	return (
 		<div className='post-form'>
+			
+			
+			<Link to='/marketplace' className='btn'>
+				Back to Marketplace
+			</Link>
 			<div className='bg-primary p'>
 				<h3>Post an item or service to the marketplace.</h3>
 			</div>
@@ -22,7 +28,7 @@ const PostForm = ({ addPost }) => {
 					name='text'
 					cols='30'
 					rows='5'
-					placeholder='Create a post'
+					placeholder='List an item or service'
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 					required></textarea>
