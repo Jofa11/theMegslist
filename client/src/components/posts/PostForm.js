@@ -8,10 +8,8 @@ const PostForm = ({ addPost }) => {
 	const [text, setText] = useState('');
 
 	return (
-		<div className='post-form'>
-			
-			
-			<Link to='/marketplace' className='btn'>
+		<div className='post-form'>			
+			<Link to='/marketplace' className='btn' id='marg-1'>
 				Back to Marketplace
 			</Link>
 			<div className='bg-primary p'>

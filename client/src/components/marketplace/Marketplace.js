@@ -24,7 +24,7 @@ const Marketplace = ({
 		<Fragment>
 			<h1 className='large text-primary'>Marketplace</h1>
 			<p className='lead'>
-				<i className='fas fa-user'></i> Welcome {user && user.name}, to the marketplace
+				<i className='fas fa-user'></i> Welcome to the marketplace, {user && user.name}
 			</p>
 			{profile !== null ? (
 				<Fragment>

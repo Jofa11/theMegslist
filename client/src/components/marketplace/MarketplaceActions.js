@@ -13,7 +13,7 @@ const MarketplaceActions = ({ _id }) => {
 				<i className='fas fa-user-circle text-primary'></i> Edit Profile
 			</Link>
 			<Link to='/postform' className='btn btn-light'>
-				<i className='fab fa-black-tie text-primary'></i> List an Item
+				<i className="fas fa-comment-dollar text-primary"></i> List an Item
 			</Link>
 		</div>
 	);
