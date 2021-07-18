@@ -12,39 +12,43 @@
 
 ## Profile Form
 ##### Create your profile with the info you would like to use to be contacted
-![Profile Form](src/img/megs-profile-form.png)
+![Profile Form](client/src/img/megs-profile-form.png)
 
 ## Profile
 ##### The profile page, showing provided information. The social media icons are links and only appear if provided
-![Profile](src/img/megs-profile-view.png)
+![Profile](client/src/img/megs-profile-view.png)
 
 ##### Code snippet for only showing provided profile information
-![Profile code](src/img/megs-profile.png)
+![Profile code](client/src/img/megs-profile.png)
 
 ## Sign In
 ##### Sign in page
-![Sign In](src/img/megs-signin.png)
+![Sign In](client/src/img/megs-signin.png)
 
 ##### With alert
-![Sign In Alert](src/img/megs-form-alert.png)
+![Sign In Alert](client/src/img/megs-form-alert.png)
 
 ## The Marketplace
 ##### This is the main feature of the app. This is where all post are displayed. Authenticated users can make posts, comment on posts, and see other users' profiles.
-![Marketplace](src/img/megs-marketplace.png)
+![Marketplace](client/src/img/megs-marketplace.png)
 
 ## Wireframe
 ##### Concept Marketplace
-![Concept Marketplace](src/img/megs-wire-marketplace.pdf)
+![Concept Marketplace](client/src/img/megs-wire-marketplace.pdf)
 
 ##### Concept Item Detail Page
-![Concept Item Detail](src/img/MegsListItemDetail.pdf)
+![Concept Item Detail](client/src/img/MegsListItemDetail.pdf)
 
 ##### Concept Profile Page
-![Concept Profile Page](src/img/MeglistSellerInfo.pdf)
+![Concept Profile Page](client/src/img/MeglistSellerInfo.pdf)
 
 ## Technologies Used
 ##### For theMegsList, the frontend was developed using React with hook components. I used Redux to manage state. For styling, I did not use any framework or library. I did try to use some more efficient styling practices, such as setting reusable colors, styles, and just being less redundant. Authentication was implemented using JWT. I created the backend using Node.JS with Express and Mongoose. I used MongoDB to create a NoSQL database. The app is deployed on Heroku using the free tier, so apologies for the slow initial load.  
 
 ### Code Snippet
 ##### I learned a new way to set up my scripts in package json on the server side to run the front end and back end with one command, also a clean way to run heroku postbuild
-![scripts](src/img/megs-script.png)
+![scripts](client/src/img/megs-script.png)
+
+## Contribution Guidelines
+
+If you have some cool ideas and would like to contribute, I will definitely consider it. Fork, clone, and send an issue if you have any proposed improvements to the app. This app is built for learning purposes, but I do appreciate any feedback. Thanks for checking it out.
