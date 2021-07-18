@@ -8,7 +8,7 @@
 
 ## Landing Page
 ##### The landing page that prompts the user to sign up or sign in
-![Landing Page](src/img/megs-landing.png)
+![Landing Page](client/src/img/megs-landing.png)
 
 ## Profile Form
 ##### Create your profile with the info you would like to use to be contacted
