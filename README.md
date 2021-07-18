@@ -34,13 +34,13 @@
 
 ## Wireframe
 ##### Concept Marketplace
-![Concept Marketplace](client/src/img/megs-wire-marketplace.pdf)
+![Concept Marketplace](client/src/img/megs-wire-marketplace.png)
 
 ##### Concept Item Detail Page
-![Concept Item Detail](client/src/img/MegsListItemDetail.pdf)
+![Concept Item Detail](client/src/img/megs-wire-item.png)
 
 ##### Concept Profile Page
-![Concept Profile Page](client/src/img/MeglistSellerInfo.pdf)
+![Concept Profile Page](client/src/img/megs-wire-seller.png)
 
 ## Technologies Used
 ##### For theMegsList, the frontend was developed using React with hook components. I used Redux to manage state. For styling, I did not use any framework or library. I did try to use some more efficient styling practices, such as setting reusable colors, styles, and just being less redundant. Authentication was implemented using JWT. I created the backend using Node.JS with Express and Mongoose. I used MongoDB to create a NoSQL database. The app is deployed on Heroku using the free tier, so apologies for the slow initial load.  
